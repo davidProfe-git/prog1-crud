@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Blog Personal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #00c3ff;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 20px auto;
+            gap: 20px;
+        }
+
+        .content {
+            flex: 3;
+        }
+
+        .post {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .post h2 {
+            margin-top: 15px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            height: fit-content;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mi Blog Personal</h1>
+    <p>Compartiendo ideas y experiencias</p>
+</header>
+
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Tecnología</a>
+    <a href="#">Viajes</a>
+    <a href="#">Contacto</a>
+</nav>
+
+<div class="container">
+    
+    <div class="content">
+        
+        <div class="post">
+            <img src="https://picsum.photos/800/400?random=1" alt="Imagen del post">
+            <h2>Mi primer artículo</h2>
+            <p><em>Publicado el 25 de febrero de 2026</em></p>
+            <p>
+                Este es un ejemplo de artículo para tu blog. Puedes escribir aquí cualquier contenido:
+                historias, tutoriales, experiencias personales o noticias.
+            </p>
+        </div>
+
+        <div class="post">
+            <img src="https://picsum.photos/800/400?random=2" alt="Imagen del post">
+            <h2>Otro artículo interesante</h2>
+            <p><em>Publicado el 20 de febrero de 2026</em></p>
+            <p>
+                Este es otro ejemplo de entrada. Puedes duplicar esta sección para agregar más
+                publicaciones fácilmente.
+            </p>
+        </div>
+
+    </div>
+
+    <aside class="sidebar">
+        <h3>Sobre mí</h3>
+        <p>Hola, soy el autor de este blog. Aquí comparto contenido sobre tecnología, diseño y más.</p>
+
+        <h3>Categorías</h3>
+        <ul>
+            <li>Tecnología</li>
+            <li>Viajes</li>
+            <li>Programación</li>
+            <li>Estilo de vida</li>
+        </ul>
+    </aside>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Mi Blog Personal - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
