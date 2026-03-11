@@ -6,7 +6,7 @@ aplication.get('/', (req, res) => {
 })
 
 aplication.get('/saludo', (req, res) => {
-    res.json({mensaje: 'Mi primera prueba de servidor con Express'})
+    res.json({mensaje: "Mi <b>primera</b> prueba de servidor con Express"})
 })
 
 aplication.listen(3000, () => {
