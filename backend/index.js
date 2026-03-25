@@ -1,17 +1,16 @@
 const express = require("express")
+const controlador = require("./controllers/recetaController")
 const aplicacion = express()
 
-aplicacion.get ('/', (request, response)=>{
-    response.send("Hola amigos de tik tok")
+aplicacion.get('/',(request, response)=>{
+    // response.send(`<h1>Hola de ${clase} 1</h1>`)
 })
 
-aplicacion.listen(3000,()=>{
-    console.log("El servidor levanto")
+aplicacion.get('/recetas',(request,response)=>{
+    controlador.obtenerRecetas(response)
 })
 
-aplicacion.get('/saludo',(request, response)=>{
-    response.json({mensaje: "Coman popis"})
-})
+
 aplicacion.listen(3000,()=>{
     console.log("el servidor levanto")
 })
