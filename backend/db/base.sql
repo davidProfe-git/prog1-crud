@@ -1,0 +1,1 @@
+SELECT * FROM recetas where id = 4

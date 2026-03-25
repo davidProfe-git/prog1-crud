@@ -23,7 +23,7 @@ npm pkg set scripts.start="node src/app.js"
 npm pkg set scripts.dev="nodemon src/app.js"
 
 # 6. Verificar
-npm list --depth=0
+npm list --depth=0ñ
 npm run
 
 # 7. Ejecutar servidor
