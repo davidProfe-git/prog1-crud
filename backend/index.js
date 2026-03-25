@@ -1,14 +1,15 @@
-const express = require('express')
-const aplicacion = express ()
+const express = require("express")
+const controlador = require("./controllers/recetaController")
+const aplicacion = express()
 
-aplicacion.get ('/',(request,response)=>{
-
-    response.send("poner un mensaje")
+aplicacion.get('/',(request, response)=>{
+    // response.send(`<h1>Hola de ${clase} 1</h1>`)
 })
 
-aplicacion.get('/saludo',(request,response)=>{
-    response.json({mensaje:"responder el mensaje"})
+aplicacion.get('/recetas',(request,response)=>{
+    controlador.obtenerRecetas(response)
 })
+
 
 aplicacion.listen(3000,()=>{
     console.log("el servidor levanto")
