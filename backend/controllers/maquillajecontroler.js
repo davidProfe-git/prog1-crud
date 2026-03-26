@@ -31,8 +31,8 @@ class maquillajeController{
         })
     }
 
-     static async obtenercomentarios(response){
-        let consultarcomentarios = await model.consultarcomentarios()
+    static async obtenercomentarios(response){
+        let comentarios = await model.consultarcomentarios()
         response.json({
             data: comentarios
         })
