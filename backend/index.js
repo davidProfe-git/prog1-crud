@@ -1,13 +1,13 @@
 const express = require("express")
-const controlador = require("./controllers/recetaController")
+const controlador = require("./controllers/peliculacontroller")
 const aplicacion = express()
 
 aplicacion.get('/',(request, response)=>{
     // response.send(`<h1>Hola de ${clase} 1</h1>`)
 })
 
-aplicacion.get('/recetas',(request,response)=>{
-    controlador.obtenerRecetas(response)
+aplicacion.get('/pelicula',(request,response)=>{
+    controlador.obtenerpeliculas(response)
 })
 
 

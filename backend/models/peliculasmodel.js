@@ -3,14 +3,14 @@
 // Controller -> comunicar vista con modelo, logica de negocio
 const db = require("../db/conexiondb")
 
-class RecetaModel{
+class peliculasModel{
 
-    static async consultarReceta(){
-        let receta = await db.query('SELECT * FROM recetas where id = 4')
-        return receta
+    static async consultarPeliculas(){
+        let peliculas = await db.query('SELECT * FROM peliculas')
+        return peliculas
     }
 
 
 }
 
-module.exports = RecetaModel
+module.exports = peliculasModel
