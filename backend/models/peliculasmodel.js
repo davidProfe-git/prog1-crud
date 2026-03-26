@@ -9,8 +9,28 @@ class peliculasModel{
         let peliculas = await db.query('SELECT * FROM peliculas')
         return peliculas
     }
+static async consultarreviews(){
+        let peliculas = await db.query('SELECT * FROM reviews')
+        return peliculas
+    }
+
+    static async consultarcomentarios(){
+        let peliculas = await db.query('SELECT * FROM comentarios')
+        return peliculas
+    }
+
+    static async consultarfavoritos(){
+        let peliculas = await db.query('SELECT * FROM favoritos')
+        return peliculas
+    }
+
 
 
 }
+
+
+
+
+
 
 module.exports = peliculasModel

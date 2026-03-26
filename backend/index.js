@@ -10,7 +10,17 @@ aplicacion.get('/pelicula',(request,response)=>{
     controlador.obtenerpeliculas(response)
 })
 
+aplicacion.get('/reviews',(request,response)=>{
+    controlador.obtenerreviews(response)
+})
 
+aplicacion.get('/comentarios',(request,response)=>{
+    controlador.obtenercomentarios(response)
+})
+
+aplicacion.get('/favoritos',(request,response)=>{
+    controlador.obtenerfavoritos(response)
+})
 aplicacion.listen(3000,()=>{
     console.log("el servidor levanto")
 })
