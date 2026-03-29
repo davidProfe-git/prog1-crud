@@ -1,52 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Lista de Libros</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Libros - Prog1 CRUD</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Biblioteca de Libros</h1>
+        <p>Programación 1 - CRUD de Libros</p>
+    </header>
 
-    <h1>Mis Libros</h1>
+    <main>
+        <section class="hero">
+            <h2>Descubre grandes libros</h2>
+            <p>Una colección de obras clásicas y modernas para disfrutar.</p>
+        </section>
 
-    <h3>Lista de lectura rápida:</h3>
-    <ul>
-        <li>Don Quijote de la Mancha - Miguel de Cervantes</li>
-        <li>Rayuela - Julio Cortázar</li>
-        <li>Fahrenheit 451 - Ray Bradbury</li>
-    </ul>
+        <div class="search">
+            <input type="text" id="buscar" placeholder="Buscar libro o autor...">
+            <button onclick="buscarLibro()">Buscar</button>
+        </div>
 
-    <hr>
+        <section class="libro-destacado">
+            <h3>Libro destacado</h3>
+            <div class="card destacado">
+                <h4>Cien años de soledad</h4>
+                <p><strong>Autor:</strong> Gabriel García Márquez</p>
+                <p><strong>Género:</strong> Realismo mágico • 1967</p>
+                <p>Una de las obras más importantes de la literatura latinoamericana.</p>
+            </div>
+        </section>
 
-    <h3>Top 3 Favoritos:</h3>
-    <ol>
-        <li>Crónica de una muerte anunciada</li>
-        <li>Fundación</li>
-        <li>Moby Dick</li>
-    </ol>
+        <section class="libros-recientes">
+            <h3>Libros disponibles</h3>
+            <p id="mostrando">Mostrando 4 libros</p>
+            
+            <div class="grid-libros" id="lista-libros">
+                <!-- Los libros se cargarán aquí con JavaScript desde el backend -->
+            </div>
+        </section>
+    </main>
 
-    <hr>
+    <footer>
+        <p>CRUD de Libros - Hecho con ❤️ para la clase de Programación 1</p>
+    </footer>
 
-    <h3>Inventario Detallado:</h3>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Año</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Pedro Páramo</td>
-                <td>Juan Rulfo</td>
-                <td>1955</td>
-            </tr>
-            <tr>
-                <td>La ciudad y los perros</td>
-                <td>Mario Vargas Llosa</td>
-                <td>1963</td>
-            </tr>
-        </tbody>
-    </table>
+    <script>
+        async function cargarLibros() {
+            try {
+                const res = await fetch('http://localhost:3000/libros');
+                const data = await res.json();
+                const libros = data.data;
 
+                const contenedor = document.getElementById('lista-libros');
+                contenedor.innerHTML = '';
+
+                libros.forEach(libro => {
+                    const div = document.createElement('div');
+                    div.className = 'card';
+                    div.innerHTML = `
+                        <h4>${libro.titulo}</h4>
+                        <p><strong>Autor:</strong> ${libro.autor}</p>
+                        <p><strong>Género:</strong> ${libro.genero} • ${libro.anio_publicacion}</p>
+                    `;
+                    contenedor.appendChild(div);
+                });
+            } catch (error) {
+                console.error('Error al cargar libros:', error);
+                document.getElementById('lista-libros').innerHTML = '<p>Error al conectar con el servidor. Asegúrate de que el backend esté corriendo.</p>';
+            }
+        }
+
+        function buscarLibro() {
+            const termino = document.getElementById('buscar').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const texto = card.textContent.toLowerCase();
+                card.style.display = texto.includes(termino) ? 'block' : 'none';
+            });
+        }
+
+        // Cargar los libros al abrir la página
+        window.onload = cargarLibros;
+    </script>
 </body>
 </html>

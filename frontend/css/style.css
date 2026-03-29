@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.8rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+}
+
+.search {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.search input {
+    padding: 12px 20px;
+    width: 60%;
+    max-width: 500px;
+    border: 2px solid #3498db;
+    border-radius: 30px;
+    font-size: 1.1rem;
+}
+
+.search button {
+    padding: 12px 25px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1.1rem;
+}
+
+.search button:hover {
+    background: #2980b9;
+}
+
+.libro-destacado {
+    margin: 3rem 0;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.destacado {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border: 3px solid #f39c12;
+}
+
+.grid-libros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #2c3e50;
+    color: white;
+    margin-top: 4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search input {
+        width: 80%;
+    }
+}

@@ -1,16 +1,15 @@
-const express = require ("express")
+const express = require("express")
+const controlador = require("./controllers/libroController")
 const aplicacion = express()
 
-aplicacion.get('/',(request,response)=>{
-    response.send(`<h1> hola clase de ${clase} 1 </h1>`)
+aplicacion.get('/',(request, response)=>{
+    response.send(`<h1>Bienvenido al CRUD de Libros - Programación 1</h1>`)
 })
 
-aplicacion.get('/saludo',(request,response)=>{
-    response.json({mensaje:"como es señores"})
-
+aplicacion.get('/libros',(request,response)=>{
+    controlador.obtenerLibros(response)
 })
 
 aplicacion.listen(3000,()=>{
-    console.log("servidor on")
+    console.log("el servidor levanto en http://localhost:3000")
 })
-
