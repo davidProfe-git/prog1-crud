@@ -1,0 +1,1 @@
+profe psss en pocas palas ya le habia escrito un texto largo explicando en pocas palabras ahora pss se borraban los archivos no pude hacer lo de los git y ahi un archivo en el trabajo que si no lo leyyo es porque todo salio bien 
