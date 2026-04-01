@@ -6,8 +6,8 @@ const db = require("../db/conexiondb")
 class RecetaModel{
 
     static async consultarReceta(){
-        let receta = await db.query('SELECT * FROM recetas where id = 4')
-        return receta
+        let [recetas] = await db.query('SELECT * FROM recetas')
+        return recetas
     }
 
 
