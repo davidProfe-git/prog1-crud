@@ -5,7 +5,7 @@ class RecetaController{
     static async obtenerpeliculas(response){
         let peliculas = await model.consultarPeliculas()
         response.json({
-            data: peliculas
+            peliculas
         })
     }
     static async obtenerreviews(response){

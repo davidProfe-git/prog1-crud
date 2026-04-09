@@ -6,8 +6,8 @@ const db = require("../db/conexiondb")
 class peliculasModel{
 
     static async consultarPeliculas(){
-        let peliculas = await db.query('SELECT * FROM peliculas')
-        return peliculas
+        let [row] = await db.query('SELECT * FROM peliculas')
+        return row
     }
 static async consultarreviews(){
         let peliculas = await db.query('SELECT * FROM reviews')
