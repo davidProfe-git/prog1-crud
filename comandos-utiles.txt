@@ -29,3 +29,6 @@ npm run
 # 7. Ejecutar servidor
 npm run dev
 
+"codigo por memoria USB"
+
+$  git config --global --add safe.directory 'D:/PROGRAMACION I/prog1-crud'
