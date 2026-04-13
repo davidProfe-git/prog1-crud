@@ -2,91 +2,83 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Blackout Keycards</title>
+    <title>BLACKOUT — Arsenal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        #tarjetas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        .card-body h2 {
-            margin: 0 0 10px 0;
-            font-size: 1.2em;
-        }
-
-        .card-body p {
-            margin: 5px 0;
-        }
-
-        .rareza {
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <h1>Blackout Keycards</h1>
-    <div id="tarjetas"></div>
+    <div class="noise"></div>
+    <div class="scanlines"></div>
 
-    <script>
-        // Traer datos desde la API del backend
-        fetch('/api/keycards')
-            .then(res => res.json())
-            .then(data => {
-                const container = document.getElementById('tarjetas');
-                data.forEach(t => {
-                    container.innerHTML += `
-                        <div class="card">
-                            <img src="${t.imagen_url}" alt="${t.nombre}">
-                            <div class="card-body">
-                                <h2>${t.nombre}</h2>
-                                <p><strong>Usos:</strong> ${t.usos}</p>
-                                <p><strong>Valor:</strong> $${t.valor}</p>
-                                <p class="rareza"><strong>Rareza:</strong> ${t.rareza}</p>
-                            </div>
-                        </div>
-                    `;
-                });
-            })
-            .catch(err => console.error('Error cargando las tarjetas:', err));
-    </script>
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-main">BLACKOUT</span>
+                <span class="logo-sub">// ARSENAL DATABASE</span>
+            </div>
+            <div class="status-bar">
+                <span class="status-dot"></span>
+                <span class="status-text">CONNECTED</span>
+            </div>
+        </div>
+    </header>
 
+    <nav class="tabs">
+        <button class="tab active" data-tab="keycards">
+            <span class="tab-icon">⬡</span> KEYCARDS
+        </button>
+        <button class="tab" data-tab="melee">
+            <span class="tab-icon">⚔</span> MELEE
+        </button>
+        <button class="tab" data-tab="fire">
+            <span class="tab-icon">⊕</span> FIRE WEAPONS
+        </button>
+    </nav>
+
+    <main>
+        <!-- KEYCARDS -->
+        <section id="keycards" class="panel active">
+            <div class="panel-header">
+                <h2>ACCESS KEYCARDS</h2>
+                <p class="panel-desc">Tarjetas de acceso para zonas restringidas del mapa</p>
+            </div>
+            <div class="grid" id="keycards-grid">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+            </div>
+        </section>
+
+        <!-- MELEE WEAPONS -->
+        <section id="melee" class="panel">
+            <div class="panel-header">
+                <h2>MELEE WEAPONS</h2>
+                <p class="panel-desc">Armas cuerpo a cuerpo — letales en distancia corta</p>
+            </div>
+            <div class="grid" id="melee-grid">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+            </div>
+        </section>
+
+        <!-- FIRE WEAPONS -->
+        <section id="fire" class="panel">
+            <div class="panel-header">
+                <h2>FIRE WEAPONS</h2>
+                <p class="panel-desc">Armamento de fuego — domina el campo de batalla</p>
+            </div>
+            <div class="grid" id="fire-grid">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ✅ Script UNA sola vez, al final del body, con la ruta correcta -->
+    <script src="js/app.js"></script>
 </body>
 </html>
