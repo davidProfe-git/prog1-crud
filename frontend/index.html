@@ -19,10 +19,12 @@
 		.search{margin-top:14px;display:flex;gap:8px}
 		.search input{flex:1;padding:10px 12px;border-radius:8px;border:1px solid #e5e5e5}
 		.search button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer}
+		.btn-new{background:var(--accent);color:white;border:none;padding:14px 24px;border-radius:8px;font-weight:700;cursor:pointer;font-size:16px}
+		.btn-new:hover{opacity:0.9}
 		.layout{display:grid;grid-template-columns:1fr 300px;gap:20px;margin-top:18px}
 		.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 		.card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(20,20,20,0.04);display:flex;flex-direction:column}
-		.thumb{height:150px;background:linear-gradient(135deg,#ffe0cc,#ffd1a3);display:flex;align-items:flex-end;padding:12px;color:#5a2b00;font-weight:700}
+		.card img{width:100%;height:150px;object-fit:cover;display:block}
 		.meta{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
 		.tags{font-size:12px;color:var(--muted)}
 		.title{font-size:16px;margin:0}
@@ -78,44 +80,10 @@
 			<main>
 				<div style="display:flex;justify-content:space-between;align-items:center;margin:12px 0">
 					<h2 style="margin:0">Recetas recientes</h2>
-					<div style="color:var(--muted);font-weight:700">Mostrando 8</div>
+					<button class="btn-new">+ Nueva receta</button>
 				</div>
-				<div class="cards">
-					<article class="card">
-						<div class="thumb">Ensalada de quinoa</div>
-						<div class="meta">
-							<div class="tags">Vegetariana • 20 min</div>
-							<h3 class="title">Ensalada mediterránea de quinoa con limón</h3>
-							<p class="excerpt">Fresca y ligera, perfecta como acompañamiento o plato principal.</p>
-						</div>
-					</article>
-
-					<article class="card">
-						<div class="thumb">Pasta cremosa</div>
-						<div class="meta">
-							<div class="tags">Pasta • 25 min</div>
-							<h3 class="title">Penne con salsa cremosa de tomate asado</h3>
-							<p class="excerpt">Salsa casera asada para aprovechar tomates maduros.</p>
-						</div>
-					</article>
-
-					<article class="card">
-						<div class="thumb">Sopa reconfortante</div>
-						<div class="meta">
-							<div class="tags">Sopas • 40 min</div>
-							<h3 class="title">Sopa de lentejas especiada</h3>
-							<p class="excerpt">Sencilla, nutritiva y llena de sabor.</p>
-						</div>
-					</article>
-
-					<article class="card">
-						<div class="thumb">Postre rápido</div>
-						<div class="meta">
-							<div class="tags">Postres • 15 min</div>
-							<h3 class="title">Mousse rápido de chocolate y aguacate</h3>
-							<p class="excerpt">Postre cremoso con ingredientes naturales.</p>
-						</div>
-					</article>
+				<div id="cuerpo" class="cards">
+					
 				</div>
 			</main>
 
